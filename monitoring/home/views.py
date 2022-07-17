@@ -1,12 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views import View
 from django.contrib.auth.models import User
-from datetime import date, datetime
 from django.db.models import Count
 from django.db.models.functions import (
     TruncDate, TruncDay, TruncHour, TruncMinute, TruncSecond,
-    )
+)
+from rest_framework import generics
+from .serializer import UserSerializer
+
+
+class UserAPIView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
 class HomeView(View):
     template_name = 'home/home.html'
 
