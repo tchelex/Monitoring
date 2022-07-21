@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import Monitoring
 
-# Register your models here.
+class MonitoringAdmin(admin.ModelAdmin):
+    list_display = ('day', 'count')
+
+
+
+admin.site.register(Monitoring, MonitoringAdmin)

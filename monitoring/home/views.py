@@ -21,12 +21,9 @@ class HomeView(View):
         # логика анализа модели users
         users_list_all = User.objects.all()
         users_list = User.objects.annotate(day=TruncDay('date_joined')).values('day').annotate(count=Count('id'))
-        # for user in users_list:
-        #     print(user['day'], user['count'])
 
         context = {
             "users_list": users_list,
             "users_list_all": users_list_all
-
         }
         return render(request, self.template_name, context)
