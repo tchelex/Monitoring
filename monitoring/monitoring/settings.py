@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-go-$e!l=i4zp!#26a=lwx^vwmi-o5j*d4_4!thu@vwipef)5^1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1:8000", "tchetvergov.ru", "www.tchetvergov.ru"]
 
 
 # Application definition
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
+    # 'monitor.apps.MonitorConfig',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,7 +81,11 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'u1741034_default',
+        'USER': 'u1741034_default',
+        'PASSWORD': 'Y3p6eafDs35dWvVz',
+        'HOST': 'localhost'
     }
 }
 
@@ -122,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
