@@ -1,0 +1,11 @@
+{%extends 'home/main.html'%}     <!--#добавляем все что в main.html-->
+
+{%block main_section%}          <!--#формируем блок main_section-->
+    <div class="form-section">
+        <h2>{{user.username}}</h2>
+
+        <hr>
+        <a href="/exit">Выйти</a>
+    </div>
+
+{%endblock%}

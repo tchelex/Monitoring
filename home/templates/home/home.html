@@ -1,0 +1,16 @@
+{%extends 'home/main.html'%}     <!--#добавляем все что в main.html-->
+
+{%block main_section%}          <!--#формируем блок main_section-->
+  {% for users in users_list_all %}
+      <div class="UsersList">
+          {{ users.username}}
+          {{ users.date_joined }}
+      </div>
+  {% endfor %}
+  {% for users in users_list %}
+      <div class="UsersList">
+          {{ users.day.date}}
+          {{ users.count }}
+      </div>
+  {% endfor %}
+{%endblock%}
